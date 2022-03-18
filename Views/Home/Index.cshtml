@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Display SQL data";
+    //string[] TableHeaders = new string[] {"tp_SiteID"
+    //  ,"tp_ID"
+    //  ,"tp_Login"
+    //  ,"tp_Title"
+    //  ,"tp_Email"
+    //  ,"tp_ExternalTokenLastUpdated"
+    //  ,"tp_Mobile" };
+    // amit itt megadok elnevezést, az lesz a tábla fejlécében
+    //string[] TableHeaders = new string[] {"SiteID"
+    //  ,"ID"
+    //  ,"Login Name"
+    //  ,"Title"
+    //  ,"Email"
+    //  ,"Token Last Updated"
+    //  ,"Mobile" 
+    //};
+
+    string[] TableHeaders = new string[]
+    {
+        "ID",
+        "UserName",
+        "FirstName",
+        "LastName",
+        "Email"
+    };
+
+}
+
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <!-- ha fel van töltve a lista a homecontrollerrel, akkor lehet itt megjeleníteni -->
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            @*<td>@Data.SiteID</td>
+                            <td>@Data.ID</td>
+                            <td>@Data.Login</td>
+                            <td>@Data.Title</td>
+                            <td>@Data.Email</td>
+                            <td>@Data.ExternalTokenLastUpdated</td>
+                            <td>@Data.Mobile</td>*@
+
+                            <td>@Data.ID</td>
+                            <td>@Data.UserName</td>
+                            <td>@Data.FirstName</td>
+                            <td>@Data.LastName</td>
+                            <td>@Data.Email</td>
+
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
