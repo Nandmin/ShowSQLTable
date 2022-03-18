@@ -80,7 +80,7 @@ namespace ShowSQLTable.Controllers
             {
                 con.Open();
                 com.Connection = con;
-                com.CommandText = "SELECT [id], [UserName], [FirstName], [LastName] FROM [Webster].[dbo].[Users]";
+                com.CommandText = "SELECT [id], [UserName], [FirstName], [LastName], [E-mail] FROM [Webster].[dbo].[Users]";
                 dr = com.ExecuteReader();
                 // a lista elkészülte után lehet az adatokat beolvasni
                 while (dr.Read())
@@ -92,7 +92,7 @@ namespace ShowSQLTable.Controllers
                         UserName = dr["UserName"].ToString(),
                         FirstName = dr["FirstName"].ToString(),
                         LastName = dr["LastName"].ToString(),
-                        Email = dr["Email"].ToString()
+                        Email = dr["E-mail"].ToString()
 
                     });
                 }
